@@ -3,6 +3,7 @@ package com.plcoding.dictionary.feature_dictionary.di
 import android.app.Application
 import androidx.room.Room
 import com.google.gson.Gson
+import com.plcoding.dictionary.feature_dictionary.data.local.Converters
 import com.plcoding.dictionary.feature_dictionary.data.local.WordInfoDatabase
 import com.plcoding.dictionary.feature_dictionary.data.remote.DictionaryApi
 import com.plcoding.dictionary.feature_dictionary.data.repository.WordInfoRepositoryImpl
@@ -46,7 +47,7 @@ object WordInfoModule {
         return Room.databaseBuilder(
             app, WordInfoDatabase::class.java,
             "word_db"
-        ).addTypeConverter(jsonParser)
+        ).addTypeConverter(Converters(jsonParser))
             .build()
     }
 
