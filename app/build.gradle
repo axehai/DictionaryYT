@@ -33,14 +33,13 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-        useIR = true
     }
     buildFeatures {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion '1.5.21'
+        kotlinCompilerExtensionVersion = "1.3.2"
+        kotlinCompilerVersion '1.7.20'
     }
     packagingOptions {
         resources {
